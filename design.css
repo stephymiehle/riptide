@@ -159,7 +159,7 @@ div.line {
 }
 
 div[ltype=privmsg] span.senderContainer {
-    width:                  100px;
+    width:                  125px;
     padding:                0 10px;
     display:                table-cell;
     text-align:             right;
@@ -168,7 +168,7 @@ div[ltype=privmsg] span.senderContainer {
 }
 
 div[ltype=action] span.senderContainer {
-    padding:                0 3px 0 120px;
+    padding:                0 3px 0 145px;
     display:                table-cell;
     font-weight:            bold;
     font-style:             italic;
@@ -188,7 +188,7 @@ div[ltype=action] span.innerMessage {
 
 div.event span.message, div[ltype=notice] span.message {
     display:                table-cell;
-    padding-left:           120px;
+    padding-left:           145px;
     font-size:              90%;
     color:                  #BBDAFF;
 }
