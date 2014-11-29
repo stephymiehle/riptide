@@ -189,7 +189,7 @@ div[ltype=action] span.innerMessage {
 div.event span.message, div[ltype=notice] span.message {
     display:                table-cell;
     padding-left:           120px;
-    font-size:              80%;
+    font-size:              90%;
     color:                  #BBDAFF;
 }
 
