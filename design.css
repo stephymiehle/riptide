@@ -1,0 +1,560 @@
+/*
+ * General
+ */
+
+* {
+    margin:                 0;
+    padding:                0;
+    font-size:              100%;
+    -webkit-hyphens:        auto;
+    hyphens:                auto;
+    -webkit-word-break:     break-word;
+    word-wrap:              break-word;
+    -webkit-word-wrap:      break-word;
+    word-wrap:              break-word;
+}
+
+body {
+    color:                  #DDDDDD;
+    height:                 100%;
+    z-index:                100;
+    font-size:              12px;
+    overflow:               hidden;
+    overflow-y:             visible;
+    background-color:       #2D2D2D;
+    font-family:            "Helvetica Neue";
+    font-weight:            200;
+}
+
+p {
+    overflow:               visible !important;
+}
+
+#body_home {
+    left:                   0;
+    right:                  0;
+    bottom:                 0;
+    width:                  100%;
+    z-index:                100;
+    max-height:             99.99%;
+    position:               absolute;
+}
+
+
+/*
+ * Links
+ */
+
+a {
+    color:                  #6699CC;
+}
+
+a:hover {
+    color:                  #CC99CC;
+}
+
+
+/*
+ * Images
+ */
+
+body a img {
+    border:                 0;
+}
+
+body video,
+body img {
+    display:                block;
+}
+
+.inlineImageCell {
+    position:               relative;
+    display:                table;
+    overflow:               auto;
+    width:                  auto;
+    height:                 auto;
+}
+
+.inlineImageCell > a {
+    display:                inline-block;
+    border:                 none;
+}
+
+.inlineImageCell .image {
+    display:                inline-block;
+    float:                  left;
+    margin:                 15px 0;
+    min-width:              100px;
+    max-width:              90%;
+}
+
+.inlineImageCell .closeButton {
+    background:             #000000;
+    border-radius:          50%;
+    position:               absolute;
+    box-sizing:             border-box;
+    font-size:              15px !important;
+    font-family:            "Helvetica Neue" !important;
+    font-weight:            100 !important;
+    text-align:             center;
+    line-height:            13px;
+    color:                  #fff;
+    border:                 2px solid #fff;
+    top:                    5px;
+    right:                  -7px;
+    width:                  20px;
+    height:                 20px;
+    cursor:                 pointer;
+}
+
+
+/*
+ * Remember Line
+ */
+
+div[id=mark] {
+    clear:                  both;
+    border-bottom:          1px solid #F2777A;
+}
+
+
+/*
+ * Topic bar
+ */
+
+#topic_bar {
+    top:                    0;
+    left:                   0;
+    right:                  0;
+    z-index:                400;
+    opacity:                0;
+    color:                  #D1F1A9;
+    position:               fixed;
+    padding:                5px 5px 5px;
+    background-color:       rgba(113, 140, 00, 0.90);
+    -webkit-transition:     opacity 0.90s linear;
+    -webkit-transform:      translateZ(0);
+    -webkit-font-smoothing: subpixel-antialiased;
+    overflow:               hidden;
+    white-space:            nowrap;
+    text-overflow:          ellipsis;
+    font-weight:            bold;
+    text-shadow:            0px 0px 5px #222;
+    font-size:              11px;
+}
+
+#topic_bar:hover {
+    overflow:               visible;
+    white-space:            normal;
+}
+
+/*
+ * Messages
+ */
+
+div.line {
+    padding:                3px 0;
+    clear:                  both;
+    min-height:             16px;
+}
+
+div[ltype=privmsg] span.senderContainer {
+    width:                  100px;
+    padding:                0 10px;
+    display:                table-cell;
+    text-align:             right;
+    font-weight:            bold;
+    text-overflow:          ellipsis;
+}
+
+div[ltype=action] span.senderContainer {
+    padding:                0 3px 0 120px;
+    display:                table-cell;
+    font-weight:            bold;
+    font-style:             italic;
+}
+
+div[ltype=privmsg] span.innerMessage {
+    display:                table-cell;
+}
+
+div[ltype=action] span.innerMessage {
+    font-style:             italic;
+}
+
+div[ltype=action] span.innerMessage {
+    display:                table-cell;
+}
+
+div.event span.message, div[ltype=notice] span.message {
+    display:                table-cell;
+    padding-left:           120px;
+    font-size:              80%;
+    color:                  #BBDAFF;
+}
+
+body .inline_nickname {
+    font-weight:            700;
+}
+
+div.line[ltype=privmsg][highlight=true],
+div.line[ltype=action][highlight=true] {
+    background-color:        rgba(204, 102, 102, 0.33);
+}
+
+.sender[mtype*=myself] {
+    color:                   #6495ED !important;
+}
+
+div[mtype*=myself] {
+    background-color:        rgba(66, 113, 174, 0.33);
+}
+
+div.line[ltype=join],
+div.line[ltype=part],
+div.line[ltype=quit],
+div.line[ltype=mode],
+div.line[ltype=nick],
+div.line[ltype=topic],
+div.line[ltype=website] {
+}
+
+div.line[ltype=topic] span.message {
+}
+
+span.time {
+    display:                table-cell;
+    float:                  right;
+    padding:                2px 10px;
+    font-size:              75%;
+    color:                  #999999;
+}
+
+.historic {
+    opacity: 0.50;
+}
+
+
+
+/*
+ * selected user
+ */
+
+.senderContainer {
+    cursor:                 pointer;
+    overflow:               hidden;
+}
+
+body div.line[ltype=privmsg]:not(.selectedUser),
+body div.line[ltype=action]:not(.selectedUser) {
+    transition-property:    background-color;
+    transition-duration:    0.5s, 0.5s, 0.5s;
+}
+
+body div.line[ltype=privmsg] .time:not(.selectedUser),
+body div.line[ltype=action] .time:not(.selectedUser) {
+    transition:             color 0.5s;
+}
+
+body div.line.selectedUser[highlight=false] .time {
+    transition:             color 0.5s ease-in;
+    color:                  #aaa;
+}
+
+body div.line.selectedUser[highlight=false] {
+    transition-property:    background-color;
+    transition-duration:    0.5s, 0.5s, 0.5s;
+    z-index:                190;
+    position:               relative;
+    background-color:       rgba(249, 145, 87, 0.33);
+}
+
+
+/*
+ * colors!
+ */
+
+.sender[mtype*=normal][colornumber='0'],
+.inline_nickname[colornumber='0'] {
+    color: #C82829 !important; /* Tomorrow: Red */
+}
+
+.sender[mtype*=normal][colornumber='1'],
+.inline_nickname[colornumber='1'] {
+    color: #F5871F !important; /* Tomorrow: Orange */
+}
+
+.sender[mtype*=normal][colornumber='2'],
+.inline_nickname[colornumber='2'] {
+    color: #EAB700 !important; /* Tomorrow: Yellow */
+}
+
+.sender[mtype*=normal][colornumber='3'],
+.inline_nickname[colornumber='3'] {
+    color: #718C00 !important; /* Tomorrow: Green */
+}
+
+.sender[mtype*=normal][colornumber='4'],
+.inline_nickname[colornumber='4'] {
+    color: #3E999F !important; /* Tomorrow: Aqua */
+}
+
+.sender[mtype*=normal][colornumber='5'],
+.inline_nickname[colornumber='5'] {
+    color: #8959A8 !important; /* Tomorrow: Purple */
+}
+
+.sender[mtype*=normal][colornumber='6'],
+.inline_nickname[colornumber='6'] {
+    color: #F2777A !important; /* Tomorrow Night Eighties: Red */
+}
+
+.sender[mtype*=normal][colornumber='7'],
+.inline_nickname[colornumber='7'] {
+    color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
+}
+
+.sender[mtype*=normal][colornumber='8'],
+.inline_nickname[colornumber='8'] {
+    color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
+}
+
+.sender[mtype*=normal][colornumber='9'],
+.inline_nickname[colornumber='9'] {
+    color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
+}
+
+.sender[mtype*=normal][colornumber='10'],
+.inline_nickname[colornumber='10'] {
+    color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
+}
+
+.sender[mtype*=normal][colornumber='11'],
+.inline_nickname[colornumber='11'] {
+    color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
+}
+
+.sender[mtype*=normal][colornumber='12'],
+.inline_nickname[colornumber='12'] {
+    color: #D54E53 !important; /* Tomorrow Night Bright: Red */
+}
+
+.sender[mtype*=normal][colornumber='13'],
+.inline_nickname[colornumber='13'] {
+    color: #E78C45 !important; /* Tomorrow Night Bright: Orange */
+}
+
+.sender[mtype*=normal][colornumber='14'],
+.inline_nickname[colornumber='14'] {
+    color: #E7C547 !important; /* Tomorrow Night Bright: Yellow */
+}
+
+.sender[mtype*=normal][colornumber='15'],
+.inline_nickname[colornumber='15'] {
+    color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
+}
+
+.sender[mtype*=normal][colornumber='16'],
+.inline_nickname[colornumber='16'] {
+    color: #70C0B1 !important; /* Tomorrow Night Bright: Aqua */
+}
+
+.sender[mtype*=normal][colornumber='17'],
+.inline_nickname[colornumber='17'] {
+    color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
+}
+
+.sender[mtype*=normal][colornumber='18'],
+.inline_nickname[colornumber='18'] {
+    color: #AC4142 !important; /* base16: Red */
+}
+
+.sender[mtype*=normal][colornumber='19'],
+.inline_nickname[colornumber='19'] {
+    color: #D28445 !important; /* base16: Orange */
+}
+
+.sender[mtype*=normal][colornumber='20'],
+.inline_nickname[colornumber='20'] {
+    color: #F4Bf75 !important; /* base16: Yellow */
+}
+
+.sender[mtype*=normal][colornumber='21'],
+.inline_nickname[colornumber='21'] {
+    color: #90A959 !important; /* base16: Green */
+}
+
+.sender[mtype*=normal][colornumber='22'],
+.inline_nickname[colornumber='22'] {
+    color: #75B5AA !important; /* base16: Aqua */
+}
+
+.sender[mtype*=normal][colornumber='23'],
+.inline_nickname[colornumber='23'] {
+    color: #AA750F !important; /* base16: Purple */
+}
+
+.sender[mtype*=normal][colornumber='24'],
+.inline_nickname[colornumber='24'] {
+    color: #CC6666 !important; /* Tomorrow Night: Red */
+}
+
+.sender[mtype*=normal][colornumber='25'],
+.inline_nickname[colornumber='25'] {
+    color: #DE935F !important; /* Tomorrow Night: Orange */
+}
+
+.sender[mtype*=normal][colornumber='26'],
+.inline_nickname[colornumber='26'] {
+    color: #F0C674 !important; /* Tomorrow Night: Yellow */
+}
+
+.sender[mtype*=normal][colornumber='27'],
+.inline_nickname[colornumber='27'] {
+    color: #B5BD68 !important; /* Tomorrow Night: Green */
+}
+
+.sender[mtype*=normal][colornumber='28'],
+.inline_nickname[colornumber='28'] {
+    color: #8ABEB7 !important; /* Tomorrow Night: Aqua */
+}
+
+.sender[mtype*=normal][colornumber='29'],
+.inline_nickname[colornumber='29'] {
+    color: #B294BB !important; /* Tomorrow Night: Purple */
+}
+
+.sender[mtype*=normal][colornumber='30'],
+.inline_nickname[colornumber='30'] {
+    color: #BBDAFF !important; /* Tomorrow Night Blue: Blue */
+}
+
+.effect[color-number='0'] {
+    color: #EAEAEA !important; /* Tomorrow Night Bright: Foreground */
+}
+
+.effect[color-number='1'] {
+    color: #515151 !important; /* Tomorrow Night Eighties: Selection */
+}
+
+.effect[color-number='2'] {
+    color: #6699CC !important; /* Tomorrow Night Eighties: Blue */
+}
+
+.effect[color-number='3'] {
+    color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
+}
+
+.effect[color-number='4'] {
+    color: #F2777A !important; /* Tomorrow Night Eighties: Red */
+}
+
+.effect[color-number='5'] {
+    color: #FF9DA4 !important; /* Tomorrow Night Blue: Red */
+}
+
+.effect[color-number='6'] {
+    color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
+}
+
+.effect[color-number='7'] {
+    color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
+}
+
+.effect[color-number='8'] {
+    color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
+}
+
+.effect[color-number='9'] {
+    color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
+}
+
+.effect[color-number='10'] {
+    color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
+}
+
+.effect[color-number='11'] {
+    color: #99FFFF !important; /* Tomorrow Night Blue: Aqua */
+}
+
+.effect[color-number='12'] {
+    color: #7AA6DA !important; /* Tomorrow Night Bright: Blue */
+}
+
+.effect[color-number='13'] {
+    color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
+}
+
+.effect[color-number='14'] {
+    color: #999999 !important; /* Tomorrow Night Eighties: Comment */
+}
+
+.effect[color-number='15'] {
+    color: #CCCCCC !important; /* Tomorrow Night Eighties: Foreground */
+}
+
+.effect[bgcolor-number='0'] {
+    background-color: #EAEAEA !important; /* Tomorrow Night Bright: Foreground */
+}
+
+.effect[bgcolor-number='1'] {
+    background-color: #515151 !important; /* Tomorrow Night Eighties: Selection */
+}
+
+.effect[bgcolor-number='2'] {
+    background-color: #6699CC !important; /* Tomorrow Night Eighties: Blue */
+}
+
+.effect[bgcolor-number='3'] {
+    background-color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
+}
+
+.effect[bgcolor-number='4'] {
+    background-color: #F2777A !important; /* Tomorrow Night Eighties: Red */
+}
+
+.effect[bgcolor-number='5'] {
+    background-color: #FF9DA4 !important; /* Tomorrow Night Blue: Red */
+}
+
+.effect[bgcolor-number='6'] {
+    background-color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
+}
+
+.effect[bgcolor-number='7'] {
+    background-color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
+}
+
+.effect[bgcolor-number='8'] {
+    background-color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
+}
+
+.effect[bgcolor-number='9'] {
+    background-color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
+}
+
+.effect[bgcolor-number='10'] {
+    background-color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
+}
+
+.effect[bgcolor-number='11'] {
+    background-color: #99FFFF !important; /* Tomorrow Night Blue: Aqua */
+}
+
+.effect[bgcolor-number='12'] {
+    background-color: #7AA6DA !important; /* Tomorrow Night Bright: Blue */
+}
+
+.effect[bgcolor-number='13'] {
+    background-color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
+}
+
+.effect[bgcolor-number='14'] {
+    background-color: #999999 !important; /* Tomorrow Night Eighties: Comment */
+}
+
+.effect[bgcolor-number='15'] {
+    background-color: #CCCCCC !important; /* Tomorrow Night Eighties: Foreground */
+}
+
+
