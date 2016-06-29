@@ -1,559 +1,659 @@
-/*
- * General
- */
-
+@charset "UTF-8";
+/* line 93, design.scss */
 * {
-    margin:                 0;
-    padding:                0;
-    font-size:              100%;
-    -webkit-hyphens:        auto;
-    hyphens:                auto;
-    -webkit-word-break:     break-word;
-    word-wrap:              break-word;
-    -webkit-word-wrap:      break-word;
-    word-wrap:              break-word;
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  -webkit-word-break: break-word;
+  word-wrap: break-word;
+  -webkit-word-wrap: break-word;
+  word-wrap: break-word;
 }
 
+/* line 112, design.scss */
 body {
-    color:                  #DDDDDD;
-    height:                 100%;
-    z-index:                100;
-    font-size:              12px;
-    overflow:               hidden;
-    overflow-y:             visible;
-    background-color:       #2D2D2D;
-    font-family:            "Helvetica Neue";
-    font-weight:            200;
+  color: #DDDDDD;
+  background-color: #1b2b34;
+  height: 100%;
+  z-index: 100;
+  overflow: hidden;
+  overflow-y: visible;
+  font-family: "Helvetica Neue";
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 200;
 }
 
+/* line 125, design.scss */
 p {
-    overflow:               visible !important;
+  overflow: visible !important;
 }
 
+/* line 129, design.scss */
 #body_home {
-    left:                   0;
-    right:                  0;
-    bottom:                 0;
-    width:                  100%;
-    z-index:                100;
-    max-height:             99.99%;
-    position:               absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 100;
+  max-height: 99.99%;
+  position: absolute;
 }
 
-
-/*
- * Links
- */
-
+/* line 143, design.scss */
 a {
-    color:                  #6699CC;
+  color: #6699CC;
+  transition: all 0.15s ease-in-out;
+  text-decoration: none;
+  border-bottom: 1px solid;
 }
 
+/* line 150, design.scss */
 a:hover {
-    color:                  #CC99CC;
+  color: #b3cce6;
 }
 
-
-/*
- * Images
- */
-
+/* line 158, design.scss */
 body a img {
-    border:                 0;
+  border: 0;
 }
 
+/* line 162, design.scss */
 body video,
 body img {
-    display:                block;
+  display: block;
 }
 
+/* line 167, design.scss */
 .inlineImageCell {
-    position:               relative;
-    display:                table;
-    overflow:               auto;
-    width:                  auto;
-    height:                 auto;
+  position: relative;
+  display: table;
+  overflow: auto;
+  width: auto;
+  height: auto;
 }
 
+/* line 175, design.scss */
 .inlineImageCell > a {
-    display:                inline-block;
-    border:                 none;
+  display: inline-block;
+  border: none;
 }
 
+/* line 180, design.scss */
 .inlineImageCell .image {
-    display:                inline-block;
-    float:                  left;
-    margin:                 15px 0;
-    min-width:              100px;
+  display: inline-block;
+  float: left;
+  margin: 15px 0;
+  min-width: 100px;
 }
 
+/* line 187, design.scss */
 .inlineImageCell .closeButton {
-    background:             #000000;
-    border-radius:          50%;
-    position:               absolute;
-    box-sizing:             border-box;
-    font-size:              15px !important;
-    font-family:            "Helvetica Neue" !important;
-    font-weight:            100 !important;
-    text-align:             center;
-    line-height:            13px;
-    color:                  #fff;
-    border:                 2px solid #fff;
-    top:                    5px;
-    right:                  -7px;
-    width:                  20px;
-    height:                 20px;
-    cursor:                 pointer;
+  background: #4f9261;
+  color: #99C794;
+  border-radius: 50%;
+  position: absolute;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  font-size: 12px !important;
+  font-family: "Helvetica Neue" !important;
+  font-weight: 700 !important;
+  text-align: center;
+  line-height: 18px;
+  top: 5px;
+  right: -7px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+}
+/* line 206, design.scss */
+.inlineImageCell .closeButton:hover {
+  background: #346040;
 }
 
-
-/*
- * Remember Line
- */
-
+/* line 218, design.scss */
 div[id=mark] {
-    clear:                  both;
-    border-bottom:          1px solid #F2777A;
+  clear: both;
+  height: 1px;
+  background: linear-gradient(90deg, #EC5F67, #F99157, #FAC863, #99C794, #5FB3B3, #6699CC, #C594C5);
 }
 
-
-/*
- * Topic bar
- */
-
+/* line 236, design.scss */
 #topic_bar {
-    top:                    0;
-    left:                   0;
-    right:                  0;
-    z-index:                400;
-    opacity:                0;
-    color:                  #D1F1A9;
-    position:               fixed;
-    padding:                5px 5px 5px;
-    background-color:       rgba(113, 140, 00, 0.90);
-    -webkit-transition:     opacity 0.90s linear;
-    -webkit-transform:      translateZ(0);
-    -webkit-font-smoothing: subpixel-antialiased;
-    overflow:               hidden;
-    white-space:            nowrap;
-    text-overflow:          ellipsis;
-    font-weight:            bold;
-    text-shadow:            0px 0px 5px #222;
-    font-size:              11px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 400;
+  opacity: 0;
+  color: #99C794;
+  background-color: #4f9261;
+  position: fixed;
+  padding: 5px 5px 5px;
+  -webkit-transition: opacity 0.90s linear;
+  -webkit-transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  font-size: 11px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+/* line 256, design.scss */
+#topic_bar a {
+  color: rgba(255, 255, 255, 0.75);
 }
 
+/* line 261, design.scss */
 #topic_bar:hover {
-    overflow:               visible;
-    white-space:            normal;
+  overflow: visible;
+  white-space: normal;
 }
 
-/*
- * Messages
- */
-
-div.line {
-    padding:                3px 0;
-    clear:                  both;
-    min-height:             16px;
+/* line 270, design.scss */
+.line {
+  padding: 3px 0;
+  clear: both;
+  min-height: 16.8px;
 }
 
+/* line 276, design.scss */
 div[ltype=privmsg] span.senderContainer {
-    width:                  125px;
-    padding:                0 10px;
-    display:                table-cell;
-    text-align:             right;
-    font-weight:            bold;
-    text-overflow:          ellipsis;
+  width: 125px;
+  padding: 0 10px;
+  display: table-cell;
+  text-align: right;
+  font-weight: bold;
+  text-overflow: ellipsis;
 }
 
+/* line 285, design.scss */
 div[ltype=action] span.senderContainer {
-    padding:                0 3px 0 145px;
-    display:                table-cell;
-    font-weight:            bold;
-    font-style:             italic;
+  padding: 0 3px 0 145px;
+  display: table-cell;
+  font-weight: bold;
+  font-style: italic;
 }
 
+/* line 292, design.scss */
 div[ltype=privmsg] span.innerMessage {
-    display:                table-cell;
+  display: table-cell;
 }
 
+/* line 296, design.scss */
 div[ltype=action] span.innerMessage {
-    font-style:             italic;
+  font-style: italic;
 }
 
+/* line 300, design.scss */
 div[ltype=action] span.innerMessage {
-    display:                table-cell;
+  display: table-cell;
 }
 
+/* line 304, design.scss */
 div.event span.message, div[ltype=notice] span.message {
-    display:                table-cell;
-    padding-left:           145px;
-    font-size:              90%;
-    color:                  #BBDAFF;
+  display: table-cell;
+  padding-left: 145px;
+  font-size: 90%;
+  color: rgba(95, 179, 179, 0.3);
+  font-style: italic;
+}
+/* line 311, design.scss */
+div.event span.message a, div[ltype=notice] span.message a {
+  opacity: 0.5;
 }
 
-body .inline_nickname {
-    font-weight:            700;
+/* line 316, design.scss */
+.inline_nickname {
+  font-weight: 700;
 }
 
-div.line[ltype=privmsg][highlight=true],
-div.line[ltype=action][highlight=true] {
-    background-color:        rgba(204, 102, 102, 0.33);
+/* line 320, design.scss */
+.line[ltype=privmsg][highlight=true],
+.line[ltype=action][highlight=true] {
+  background-color: rgba(250, 200, 99, 0.2);
 }
 
+/* line 325, design.scss */
 .sender[mtype*=myself] {
-    color:                   #6495ED !important;
+  color: #5FB3B3 !important;
 }
 
+/* line 329, design.scss */
 div[mtype*=myself] {
-    background-color:        rgba(66, 113, 174, 0.33);
+  background-color: rgba(95, 179, 179, 0.1);
 }
 
-div.line[ltype=join],
-div.line[ltype=part],
-div.line[ltype=quit],
-div.line[ltype=mode],
-div.line[ltype=nick],
-div.line[ltype=topic],
-div.line[ltype=website] {
+/* line 340, design.scss */
+.line[ltype=join] .message:before,
+.line[ltype=part] .message:before,
+.line[ltype=quit] .message:before,
+.line[ltype=mode] .message:before,
+.line[ltype=nick] .message:before,
+.line[ltype=topic] .message:before,
+.line[ltype=website] .message:before {
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.6;
+  margin-left: -1.5em;
+  padding-right: 0.4em;
 }
 
-div.line[ltype=topic] span.message {
+/* line 351, design.scss */
+.line[ltype=join] .message:before {
+  content: '➜';
+  color: #99C794;
 }
 
-span.time {
-    display:                table-cell;
-    float:                  right;
-    padding:                2px 10px;
-    font-size:              75%;
-    color:                  #999999;
+/* line 359, design.scss */
+.line[ltype=part] .message:before,
+.line[ltype=quit] .message:before {
+  content: '➜';
+  -webkit-transform: rotate(180deg);
+  margin-left: -1.9em;
+  padding-left: 0.4em;
+  color: #EC5F67;
 }
 
+/* line 369, design.scss */
+.line[ltype=topic] .message:before {
+  content: '✭';
+  color: #6699CC;
+}
+
+/* line 375, design.scss */
+.time {
+  display: table-cell;
+  float: right;
+  padding: 2px 10px;
+  font-size: 75%;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+/* line 383, design.scss */
 .historic {
-    opacity: 0.50;
+  opacity: 0.50;
 }
 
-
-
-/*
- * selected user
- */
-
+/* line 391, design.scss */
 .senderContainer {
-    cursor:                 pointer;
-    overflow:               hidden;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-body div.line[ltype=privmsg]:not(.selectedUser),
-body div.line[ltype=action]:not(.selectedUser) {
-    transition-property:    background-color;
-    transition-duration:    0.5s, 0.5s, 0.5s;
+/* line 396, design.scss */
+.line[ltype=privmsg]:not(.selectedUser),
+.line[ltype=action]:not(.selectedUser) {
+  transition-property: background-color;
+  transition-duration: 0.5s, 0.5s, 0.5s;
 }
 
-body div.line[ltype=privmsg] .time:not(.selectedUser),
-body div.line[ltype=action] .time:not(.selectedUser) {
-    transition:             color 0.5s;
+/* line 402, design.scss */
+.line[ltype=privmsg] .time:not(.selectedUser),
+.line[ltype=action] .time:not(.selectedUser) {
+  transition: color 0.5s;
 }
 
-body div.line.selectedUser[highlight=false] .time {
-    transition:             color 0.5s ease-in;
-    color:                  #aaa;
+/* line 407, design.scss */
+.line.selectedUser[highlight=false] .time {
+  transition: color 0.5s ease-in;
 }
 
-body div.line.selectedUser[highlight=false] {
-    transition-property:    background-color;
-    transition-duration:    0.5s, 0.5s, 0.5s;
-    z-index:                190;
-    position:               relative;
-    background-color:       rgba(249, 145, 87, 0.33);
+/* line 411, design.scss */
+.line.selectedUser[highlight=false] {
+  transition-property: background-color;
+  transition-duration: 0.5s, 0.5s, 0.5s;
+  z-index: 190;
+  position: relative;
+  background-color: rgba(236, 95, 103, 0.2);
 }
 
-
-/*
- * colors!
- */
-
-.sender[mtype*=normal][colornumber='0'],
-.inline_nickname[colornumber='0'] {
-    color: #C82829 !important; /* Tomorrow: Red */
+/* line 426, design.scss */
+.sender[mtype*=normal][colornumber$='0'],
+.inline_nickname[colornumber$='0'] {
+  color: #9e3844 !important;
 }
 
-.sender[mtype*=normal][colornumber='1'],
-.inline_nickname[colornumber='1'] {
-    color: #F5871F !important; /* Tomorrow: Orange */
+/* line 431, design.scss */
+.sender[mtype*=normal][colornumber$='1'],
+.inline_nickname[colornumber$='1'] {
+  color: #a65e37 !important;
 }
 
-.sender[mtype*=normal][colornumber='2'],
-.inline_nickname[colornumber='2'] {
-    color: #EAB700 !important; /* Tomorrow: Yellow */
+/* line 436, design.scss */
+.sender[mtype*=normal][colornumber$='2'],
+.inline_nickname[colornumber$='2'] {
+  color: #a7883d !important;
 }
 
-.sender[mtype*=normal][colornumber='3'],
-.inline_nickname[colornumber='3'] {
-    color: #718C00 !important; /* Tomorrow: Green */
+/* line 441, design.scss */
+.sender[mtype*=normal][colornumber$='3'],
+.inline_nickname[colornumber$='3'] {
+  color: #4f9261 !important;
 }
 
-.sender[mtype*=normal][colornumber='4'],
-.inline_nickname[colornumber='4'] {
-    color: #3E999F !important; /* Tomorrow: Aqua */
+/* line 446, design.scss */
+.sender[mtype*=normal][colornumber$='4'],
+.inline_nickname[colornumber$='4'] {
+  color: #328288 !important;
 }
 
-.sender[mtype*=normal][colornumber='5'],
-.inline_nickname[colornumber='5'] {
-    color: #8959A8 !important; /* Tomorrow: Purple */
+/* line 451, design.scss */
+.sender[mtype*=normal][colornumber$='5'],
+.inline_nickname[colornumber$='5'] {
+  color: #356997 !important;
 }
 
-.sender[mtype*=normal][colornumber='6'],
-.inline_nickname[colornumber='6'] {
-    color: #F2777A !important; /* Tomorrow Night Eighties: Red */
+/* line 456, design.scss */
+.sender[mtype*=normal][colornumber$='6'],
+.inline_nickname[colornumber$='6'] {
+  color: #7e5495 !important;
 }
 
-.sender[mtype*=normal][colornumber='7'],
-.inline_nickname[colornumber='7'] {
-    color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
+/* line 461, design.scss */
+.sender[mtype*=normal][colornumber$='7'],
+.inline_nickname[colornumber$='7'] {
+  color: #784e42 !important;
 }
 
-.sender[mtype*=normal][colornumber='8'],
-.inline_nickname[colornumber='8'] {
-    color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
+/* line 466, design.scss */
+.sender[mtype*=normal][colornumber$='8'],
+.inline_nickname[colornumber$='8'] {
+  color: #EC5F67 !important;
 }
 
-.sender[mtype*=normal][colornumber='9'],
-.inline_nickname[colornumber='9'] {
-    color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
+/* line 471, design.scss */
+.sender[mtype*=normal][colornumber$='9'],
+.inline_nickname[colornumber$='9'] {
+  color: #F99157 !important;
 }
 
-.sender[mtype*=normal][colornumber='10'],
-.inline_nickname[colornumber='10'] {
-    color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
+/* line 476, design.scss */
+.sender[mtype*=normal][colornumber$='10'],
+.inline_nickname[colornumber$='10'] {
+  color: #FAC863 !important;
 }
 
-.sender[mtype*=normal][colornumber='11'],
-.inline_nickname[colornumber='11'] {
-    color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
+/* line 481, design.scss */
+.sender[mtype*=normal][colornumber$='11'],
+.inline_nickname[colornumber$='11'] {
+  color: #99C794 !important;
 }
 
-.sender[mtype*=normal][colornumber='12'],
-.inline_nickname[colornumber='12'] {
-    color: #D54E53 !important; /* Tomorrow Night Bright: Red */
+/* line 486, design.scss */
+.sender[mtype*=normal][colornumber$='12'],
+.inline_nickname[colornumber$='12'] {
+  color: #5FB3B3 !important;
 }
 
-.sender[mtype*=normal][colornumber='13'],
-.inline_nickname[colornumber='13'] {
-    color: #E78C45 !important; /* Tomorrow Night Bright: Orange */
+/* line 491, design.scss */
+.sender[mtype*=normal][colornumber$='13'],
+.inline_nickname[colornumber$='13'] {
+  color: #6699CC !important;
 }
 
-.sender[mtype*=normal][colornumber='14'],
-.inline_nickname[colornumber='14'] {
-    color: #E7C547 !important; /* Tomorrow Night Bright: Yellow */
+/* line 496, design.scss */
+.sender[mtype*=normal][colornumber$='14'],
+.inline_nickname[colornumber$='14'] {
+  color: #C594C5 !important;
 }
 
-.sender[mtype*=normal][colornumber='15'],
-.inline_nickname[colornumber='15'] {
-    color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
+/* line 501, design.scss */
+.sender[mtype*=normal][colornumber$='15'],
+.inline_nickname[colornumber$='15'] {
+  color: #AB7967 !important;
 }
 
-.sender[mtype*=normal][colornumber='16'],
-.inline_nickname[colornumber='16'] {
-    color: #70C0B1 !important; /* Tomorrow Night Bright: Aqua */
+/* line 506, design.scss */
+.sender[mtype*=normal][colornumber$='16'],
+.inline_nickname[colornumber$='16'] {
+  color: #bf616a !important;
 }
 
-.sender[mtype*=normal][colornumber='17'],
-.inline_nickname[colornumber='17'] {
-    color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
+/* line 511, design.scss */
+.sender[mtype*=normal][colornumber$='17'],
+.inline_nickname[colornumber$='17'] {
+  color: #d08770 !important;
 }
 
-.sender[mtype*=normal][colornumber='18'],
-.inline_nickname[colornumber='18'] {
-    color: #AC4142 !important; /* base16: Red */
+/* line 516, design.scss */
+.sender[mtype*=normal][colornumber$='18'],
+.inline_nickname[colornumber$='18'] {
+  color: #ebcb8b !important;
 }
 
-.sender[mtype*=normal][colornumber='19'],
-.inline_nickname[colornumber='19'] {
-    color: #D28445 !important; /* base16: Orange */
+/* line 521, design.scss */
+.sender[mtype*=normal][colornumber$='19'],
+.inline_nickname[colornumber$='19'] {
+  color: #a3be8c !important;
 }
 
-.sender[mtype*=normal][colornumber='20'],
-.inline_nickname[colornumber='20'] {
-    color: #F4Bf75 !important; /* base16: Yellow */
+/* line 526, design.scss */
+.sender[mtype*=normal][colornumber$='20'],
+.inline_nickname[colornumber$='20'] {
+  color: #96b5b4 !important;
 }
 
-.sender[mtype*=normal][colornumber='21'],
-.inline_nickname[colornumber='21'] {
-    color: #90A959 !important; /* base16: Green */
+/* line 531, design.scss */
+.sender[mtype*=normal][colornumber$='21'],
+.inline_nickname[colornumber$='21'] {
+  color: #8fa1b3 !important;
 }
 
-.sender[mtype*=normal][colornumber='22'],
-.inline_nickname[colornumber='22'] {
-    color: #75B5AA !important; /* base16: Aqua */
+/* line 536, design.scss */
+.sender[mtype*=normal][colornumber$='22'],
+.inline_nickname[colornumber$='22'] {
+  color: #b48ead !important;
 }
 
-.sender[mtype*=normal][colornumber='23'],
-.inline_nickname[colornumber='23'] {
-    color: #AA750F !important; /* base16: Purple */
+/* line 541, design.scss */
+.sender[mtype*=normal][colornumber$='23'],
+.inline_nickname[colornumber$='23'] {
+  color: #ab7967 !important;
 }
 
-.sender[mtype*=normal][colornumber='24'],
-.inline_nickname[colornumber='24'] {
-    color: #CC6666 !important; /* Tomorrow Night: Red */
+/* line 546, design.scss */
+.sender[mtype*=normal][colornumber$='24'],
+.inline_nickname[colornumber$='24'] {
+  color: #fb9fb1 !important;
 }
 
-.sender[mtype*=normal][colornumber='25'],
-.inline_nickname[colornumber='25'] {
-    color: #DE935F !important; /* Tomorrow Night: Orange */
+/* line 551, design.scss */
+.sender[mtype*=normal][colornumber$='25'],
+.inline_nickname[colornumber$='25'] {
+  color: #eda987 !important;
 }
 
-.sender[mtype*=normal][colornumber='26'],
-.inline_nickname[colornumber='26'] {
-    color: #F0C674 !important; /* Tomorrow Night: Yellow */
+/* line 556, design.scss */
+.sender[mtype*=normal][colornumber$='26'],
+.inline_nickname[colornumber$='26'] {
+  color: #ddb26f !important;
 }
 
-.sender[mtype*=normal][colornumber='27'],
-.inline_nickname[colornumber='27'] {
-    color: #B5BD68 !important; /* Tomorrow Night: Green */
+/* line 561, design.scss */
+.sender[mtype*=normal][colornumber$='27'],
+.inline_nickname[colornumber$='27'] {
+  color: #acc267 !important;
 }
 
-.sender[mtype*=normal][colornumber='28'],
-.inline_nickname[colornumber='28'] {
-    color: #8ABEB7 !important; /* Tomorrow Night: Aqua */
+/* line 566, design.scss */
+.sender[mtype*=normal][colornumber$='28'],
+.inline_nickname[colornumber$='28'] {
+  color: #12cfc0 !important;
 }
 
-.sender[mtype*=normal][colornumber='29'],
-.inline_nickname[colornumber='29'] {
-    color: #B294BB !important; /* Tomorrow Night: Purple */
+/* line 571, design.scss */
+.sender[mtype*=normal][colornumber$='29'],
+.inline_nickname[colornumber$='29'] {
+  color: #6fc2ef !important;
 }
 
-.sender[mtype*=normal][colornumber='30'],
-.inline_nickname[colornumber='30'] {
-    color: #BBDAFF !important; /* Tomorrow Night Blue: Blue */
+/* line 576, design.scss */
+.sender[mtype*=normal][colornumber$='30'],
+.inline_nickname[colornumber$='30'] {
+  color: #e1a3ee !important;
 }
 
+/* line 602, design.scss */
 .effect[color-number='0'] {
-    color: #EAEAEA !important; /* Tomorrow Night Bright: Foreground */
+  color: #EAEAEA !important;
 }
 
-.effect[color-number='1'] {
-    color: #515151 !important; /* Tomorrow Night Eighties: Selection */
-}
-
-.effect[color-number='2'] {
-    color: #6699CC !important; /* Tomorrow Night Eighties: Blue */
-}
-
-.effect[color-number='3'] {
-    color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
-}
-
-.effect[color-number='4'] {
-    color: #F2777A !important; /* Tomorrow Night Eighties: Red */
-}
-
-.effect[color-number='5'] {
-    color: #FF9DA4 !important; /* Tomorrow Night Blue: Red */
-}
-
-.effect[color-number='6'] {
-    color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
-}
-
-.effect[color-number='7'] {
-    color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
-}
-
-.effect[color-number='8'] {
-    color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
-}
-
-.effect[color-number='9'] {
-    color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
-}
-
-.effect[color-number='10'] {
-    color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
-}
-
-.effect[color-number='11'] {
-    color: #99FFFF !important; /* Tomorrow Night Blue: Aqua */
-}
-
-.effect[color-number='12'] {
-    color: #7AA6DA !important; /* Tomorrow Night Bright: Blue */
-}
-
-.effect[color-number='13'] {
-    color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
-}
-
-.effect[color-number='14'] {
-    color: #999999 !important; /* Tomorrow Night Eighties: Comment */
-}
-
-.effect[color-number='15'] {
-    color: #CCCCCC !important; /* Tomorrow Night Eighties: Foreground */
-}
-
+/* line 606, design.scss */
 .effect[bgcolor-number='0'] {
-    background-color: #EAEAEA !important; /* Tomorrow Night Bright: Foreground */
+  background-color: #EAEAEA !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='1'] {
+  color: #515151 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='1'] {
-    background-color: #515151 !important; /* Tomorrow Night Eighties: Selection */
+  background-color: #515151 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='2'] {
+  color: #356997 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='2'] {
-    background-color: #6699CC !important; /* Tomorrow Night Eighties: Blue */
+  background-color: #356997 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='3'] {
+  color: #4f9261 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='3'] {
-    background-color: #99CC99 !important; /* Tomorrow Night Eighties: Green */
+  background-color: #4f9261 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='4'] {
+  color: #9e3844 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='4'] {
-    background-color: #F2777A !important; /* Tomorrow Night Eighties: Red */
+  background-color: #9e3844 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='5'] {
+  color: #784e42 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='5'] {
-    background-color: #FF9DA4 !important; /* Tomorrow Night Blue: Red */
+  background-color: #784e42 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='6'] {
+  color: #7e5495 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='6'] {
-    background-color: #CC99CC !important; /* Tomorrow Night Eighties: Purple */
+  background-color: #7e5495 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='7'] {
+  color: #F99157 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='7'] {
-    background-color: #F99157 !important; /* Tomorrow Night Eighties: Orange */
+  background-color: #F99157 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='8'] {
+  color: #FAC863 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='8'] {
-    background-color: #FFCC66 !important; /* Tomorrow Night Eighties: Yellow */
+  background-color: #FAC863 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='9'] {
+  color: #99C794 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='9'] {
-    background-color: #B9CA4A !important; /* Tomorrow Night Bright: Green */
+  background-color: #99C794 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='10'] {
+  color: #328288 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='10'] {
-    background-color: #66CCCC !important; /* Tomorrow Night Eighties: Aqua */
+  background-color: #328288 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='11'] {
+  color: #5FB3B3 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='11'] {
-    background-color: #99FFFF !important; /* Tomorrow Night Blue: Aqua */
+  background-color: #5FB3B3 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='12'] {
+  color: #6699CC !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='12'] {
-    background-color: #7AA6DA !important; /* Tomorrow Night Bright: Blue */
+  background-color: #6699CC !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='13'] {
+  color: #C594C5 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='13'] {
-    background-color: #C397D8 !important; /* Tomorrow Night Bright: Purple */
+  background-color: #C594C5 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='14'] {
+  color: #1d2d36 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='14'] {
-    background-color: #999999 !important; /* Tomorrow Night Eighties: Comment */
+  background-color: #1d2d36 !important;
 }
 
+/* line 602, design.scss */
+.effect[color-number='15'] {
+  color: #1c2c35 !important;
+}
+
+/* line 606, design.scss */
 .effect[bgcolor-number='15'] {
-    background-color: #CCCCCC !important; /* Tomorrow Night Eighties: Foreground */
+  background-color: #1c2c35 !important;
 }
-
-

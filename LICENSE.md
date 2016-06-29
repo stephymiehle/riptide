@@ -1,3 +1,18 @@
+# Riptide
+https://github.com/blindingstars/Riptide
+
+Copyright (c) 2016 Stephy Miehle
+
+Do what you like, provided that you follow along with all of the requirements
+below and that this message is retained in your release.
+
+Remix, reuse, recycle.
+
+- - -
+
+# Eighties Aligned
+https://github.com/emilyst/Eighties-Aligned
+
 Copyright (c) 2014 Emily St.
 
 Permission is hereby granted, free of charge, to any person obtaining
@@ -19,9 +34,10 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-————————————————————————————————————————————————————————————————————————————
+- - -
 
-nox (https://github.com/xlexi/nox)
+# nox
+https://github.com/xlexi/nox
 
 Copyright (c) 2013, Alex Sørlie Glomsaas, Tobias Pollmann
 All rights reserved.
@@ -51,9 +67,10 @@ ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-————————————————————————————————————————————————————————————————————————————
+- - -
 
-irccloud-colornicks (https://github.com/avidal/irccloud-colornicks/)
+# irccloud-colornicks 
+https://github.com/avidal/irccloud-colornicks/
 
 Copyright (c) 2012, Alex Vidal
 Copyright (c) 2011, Lukáš Lalinský
