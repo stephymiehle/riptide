@@ -1,0 +1,59 @@
+// Icon set created with Fontello
+
+// Note that file paths are updated below! These do NOT match the generator.
+
+@font-face {
+	font-family: 'riptide-icons';
+	src: url('Data/Resources/riptide-icons/riptide-icons.eot?98421148');
+	src: url('Data/Resources/riptide-icons/riptide-icons.eot?98421148#iefix') format('embedded-opentype'),
+	     url('Data/Resources/riptide-icons/riptide-icons.woff2?98421148') format('woff2'),
+	     url('Data/Resources/riptide-icons/riptide-icons.woff?98421148') format('woff'),
+	     url('Data/Resources/riptide-icons/riptide-icons.ttf?98421148') format('truetype'),
+	     url('Data/Resources/riptide-icons/riptide-icons.svg?98421148#riptide-icons') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+ 
+.icon, // Added this class for a nicer @extend below
+[class^="icon-"]:before, [class*=" icon-"]:before {
+	font-family: "riptide-icons";
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	display: inline-block;
+	text-decoration: inherit;
+	width: 1em;
+	text-align: center;
+
+	// For safety, reset parent styles that can break glyph codes
+	font-variant: normal;
+	text-transform: none;
+
+	// Fix buttons height for Bootstrap
+	line-height: 1em;
+
+	// Font smoothing (taken from TWBS)
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+// Included Icons
+
+.icon-globe:before { content: '\e800'; } /* '' */
+.icon-right-big:before { content: '\e801'; } /* '' */
+.icon-left-big:before { content: '\e802'; } /* '' */
+.icon-comment:before { content: '\e803'; } /* '' */
+.icon-pencil:before { content: '\e804'; } /* '' */
+.icon-star:before { content: '\e805'; } /* '' */
+.icon-heart:before { content: '\e806'; } /* '' */
+.icon-heart-empty:before { content: '\e807'; } /* '' */
+.icon-user:before { content: '\e808'; } /* '' */
+.icon-doc-text-inv:before { content: '\e809'; } /* '' */
+.icon-flash:before { content: '\e80a'; } /* '' */
+
+// Easily reference icons in our stylesheets
+
+@mixin icon($icon) {
+	@extend .icon;
+	@extend .icon-#{$icon}:before; // Pulls in the "content" value from the icon name
+}
