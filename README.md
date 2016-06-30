@@ -14,7 +14,7 @@ For ease of customization, this theme uses Sass. The compiled CSS file is includ
 
 1. Download the Riptide theme
 
-2. Open [textual://custom-styles-folder](textual://custom-styles-folder) and unarchive the Riptide theme; feel free to rename the directory if you like.
+2. Open textual://custom-styles-folder and unarchive the Riptide theme; feel free to rename the directory if you like.
 
 3. Open Textual and navigate to Preferences ➜ Style. Select "Riptide" from the dropdown.
 
