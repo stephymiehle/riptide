@@ -319,7 +319,7 @@ div.event span.message, div[ltype=notice] span.message {
 
 .line[ltype=privmsg][highlight=true],
 .line[ltype=action][highlight=true] {
-  background-color: rgba(map-get($oceanic-next, yellow), 0.2);
+  background-color: rgba(#000, 0.2);
 }
 
 .sender[mtype*=myself] {

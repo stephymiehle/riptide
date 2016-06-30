@@ -214,7 +214,7 @@ div.event span.message a, div[ltype=notice] span.message a {
 /* line 320, design.scss */
 .line[ltype=privmsg][highlight=true],
 .line[ltype=action][highlight=true] {
-  background-color: rgba(250, 200, 99, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* line 325, design.scss */
