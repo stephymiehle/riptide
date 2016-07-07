@@ -2,7 +2,7 @@
 
 ![Screenshot of Riptide theme](screenshot.png?raw=true)
 
-Riptide is a colorful and dark theme for Textual IRC.
+Riptide is a colorful and dark theme for Textual IRC. It's compatible with Textual 6 and is being tested during the beta to make sure that everything runs smoothly.
 
 Riptide is based on [emilyst/Eighties-Aligned](https://github.com/emilyst/Eighties-Aligned), "a Textual 5 style which derives elements of its appearance from the 'Tomorrow Night Eighties' the 'Nox' themes included with the Textual IRC client." The color scheme is borrowed (with love) from [voronianski/oceanic-next-color-scheme](https://github.com/voronianski/oceanic-next-color-scheme) and also includes a few favorites from [base16](https://chriskempson.github.io/base16/).
 
