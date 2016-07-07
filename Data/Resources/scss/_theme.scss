@@ -326,6 +326,14 @@ div.event span.message, div[ltype=notice] span.message {
 .line[ltype=privmsg][highlight=true],
 .line[ltype=action][highlight=true] {
   background-color: rgba(#000, 0.2);
+  background: linear-gradient(90deg,
+              rgba(map-get($oceanic-next, red), 0.15),
+              rgba(map-get($oceanic-next, orange), 0.15),
+              rgba(map-get($oceanic-next, yellow), 0.15),
+              rgba(map-get($oceanic-next, green), 0.15),
+              rgba(map-get($oceanic-next, teal), 0.15),
+              rgba(map-get($oceanic-next, blue), 0.15),
+              rgba(map-get($oceanic-next, purple), 0.15));
 }
 
 .sender[mtype*=myself] {
