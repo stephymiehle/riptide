@@ -314,21 +314,31 @@ div.event span.message a, div[ltype=notice] span.message a {
 /* line 326, Data/Resources/scss/_theme.scss */
 .line[ltype=privmsg][highlight=true],
 .line[ltype=action][highlight=true] {
-  background-color: rgba(0, 0, 0, 0.2);
   background: linear-gradient(90deg, rgba(236, 95, 103, 0.15), rgba(249, 145, 87, 0.15), rgba(250, 200, 99, 0.15), rgba(153, 199, 148, 0.15), rgba(95, 179, 179, 0.15), rgba(102, 153, 204, 0.15), rgba(197, 148, 197, 0.15));
 }
 
-/* line 339, Data/Resources/scss/_theme.scss */
+/* line 342, Data/Resources/scss/_theme.scss */
+.line[ltype=privmsg][highlight=true] .sender, .line[ltype=privmsg][highlight=true] .inline_nickname,
+.line[ltype=action][highlight=true] .sender,
+.line[ltype=action][highlight=true] .inline_nickname,
+.line.selectedUser .sender,
+.line.selectedUser .inline_nickname,
+.line[ltype=privmsg][mtype*=myself] .sender,
+.line[ltype=privmsg][mtype*=myself] .inline_nickname {
+  text-shadow: 0.1em 0.1em 0.1em rgba(0, 0, 0, 0.75);
+}
+
+/* line 347, Data/Resources/scss/_theme.scss */
 .sender[mtype*=myself] {
   color: #5FB3B3 !important;
 }
 
-/* line 343, Data/Resources/scss/_theme.scss */
+/* line 351, Data/Resources/scss/_theme.scss */
 div[mtype*=myself] {
   background-color: rgba(95, 179, 179, 0.1);
 }
 
-/* line 354, Data/Resources/scss/_theme.scss */
+/* line 362, Data/Resources/scss/_theme.scss */
 .line[ltype=join] .message:before,
 .line[ltype=part] .message:before,
 .line[ltype=quit] .message:before,
@@ -344,38 +354,38 @@ div[mtype*=myself] {
   padding-right: 0.4em;
 }
 
-/* line 365, Data/Resources/scss/_theme.scss */
+/* line 373, Data/Resources/scss/_theme.scss */
 .line[ltype=join] .message:before {
   color: #99C794;
 }
 
-/* line 373, Data/Resources/scss/_theme.scss */
+/* line 381, Data/Resources/scss/_theme.scss */
 .line[ltype=part] .message:before,
 .line[ltype=quit] .message:before {
   color: #EC5F67;
 }
 
-/* line 380, Data/Resources/scss/_theme.scss */
+/* line 388, Data/Resources/scss/_theme.scss */
 .line[ltype=topic] .message:before {
   color: #6699CC;
 }
 
-/* line 387, Data/Resources/scss/_theme.scss */
+/* line 395, Data/Resources/scss/_theme.scss */
 .line[ltype=mode] .message:before {
   color: #FAC863;
 }
 
-/* line 394, Data/Resources/scss/_theme.scss */
+/* line 402, Data/Resources/scss/_theme.scss */
 .line[ltype=nick] .message:before {
   color: #5FB3B3;
 }
 
-/* line 401, Data/Resources/scss/_theme.scss */
+/* line 409, Data/Resources/scss/_theme.scss */
 .line[ltype=website] .message:before {
   color: #C594C5;
 }
 
-/* line 407, Data/Resources/scss/_theme.scss */
+/* line 415, Data/Resources/scss/_theme.scss */
 .time {
   display: table-cell;
   float: right;
@@ -384,36 +394,36 @@ div[mtype*=myself] {
   color: rgba(255, 255, 255, 0.2);
 }
 
-/* line 415, Data/Resources/scss/_theme.scss */
+/* line 423, Data/Resources/scss/_theme.scss */
 .historic {
   opacity: 0.50;
 }
 
-/* line 423, Data/Resources/scss/_theme.scss */
+/* line 431, Data/Resources/scss/_theme.scss */
 .senderContainer {
   cursor: pointer;
   overflow: hidden;
 }
 
-/* line 428, Data/Resources/scss/_theme.scss */
+/* line 436, Data/Resources/scss/_theme.scss */
 .line[ltype=privmsg]:not(.selectedUser),
 .line[ltype=action]:not(.selectedUser) {
   transition-property: background-color;
   transition-duration: 0.5s, 0.5s, 0.5s;
 }
 
-/* line 434, Data/Resources/scss/_theme.scss */
+/* line 442, Data/Resources/scss/_theme.scss */
 .line[ltype=privmsg] .time:not(.selectedUser),
 .line[ltype=action] .time:not(.selectedUser) {
   transition: color 0.5s;
 }
 
-/* line 439, Data/Resources/scss/_theme.scss */
+/* line 447, Data/Resources/scss/_theme.scss */
 .line.selectedUser[highlight=false] .time {
   transition: color 0.5s ease-in;
 }
 
-/* line 443, Data/Resources/scss/_theme.scss */
+/* line 451, Data/Resources/scss/_theme.scss */
 .line.selectedUser[highlight=false] {
   transition-property: background-color;
   transition-duration: 0.5s, 0.5s, 0.5s;
@@ -422,349 +432,349 @@ div[mtype*=myself] {
   background-color: rgba(236, 95, 103, 0.2);
 }
 
-/* line 458, Data/Resources/scss/_theme.scss */
+/* line 466, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='0'],
 .inline_nickname[colornumber$='0'] {
   color: #9e3844 !important;
 }
 
-/* line 463, Data/Resources/scss/_theme.scss */
+/* line 471, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='1'],
 .inline_nickname[colornumber$='1'] {
   color: #a65e37 !important;
 }
 
-/* line 468, Data/Resources/scss/_theme.scss */
+/* line 476, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='2'],
 .inline_nickname[colornumber$='2'] {
   color: #a7883d !important;
 }
 
-/* line 473, Data/Resources/scss/_theme.scss */
+/* line 481, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='3'],
 .inline_nickname[colornumber$='3'] {
   color: #4f9261 !important;
 }
 
-/* line 478, Data/Resources/scss/_theme.scss */
+/* line 486, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='4'],
 .inline_nickname[colornumber$='4'] {
   color: #328288 !important;
 }
 
-/* line 483, Data/Resources/scss/_theme.scss */
+/* line 491, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='5'],
 .inline_nickname[colornumber$='5'] {
   color: #356997 !important;
 }
 
-/* line 488, Data/Resources/scss/_theme.scss */
+/* line 496, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='6'],
 .inline_nickname[colornumber$='6'] {
   color: #7e5495 !important;
 }
 
-/* line 493, Data/Resources/scss/_theme.scss */
+/* line 501, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='7'],
 .inline_nickname[colornumber$='7'] {
-  color: #784e42 !important;
+  color: #deaf8f !important;
 }
 
-/* line 498, Data/Resources/scss/_theme.scss */
+/* line 506, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='8'],
 .inline_nickname[colornumber$='8'] {
   color: #EC5F67 !important;
 }
 
-/* line 503, Data/Resources/scss/_theme.scss */
+/* line 511, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='9'],
 .inline_nickname[colornumber$='9'] {
   color: #F99157 !important;
 }
 
-/* line 508, Data/Resources/scss/_theme.scss */
+/* line 516, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='10'],
 .inline_nickname[colornumber$='10'] {
   color: #FAC863 !important;
 }
 
-/* line 513, Data/Resources/scss/_theme.scss */
+/* line 521, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='11'],
 .inline_nickname[colornumber$='11'] {
   color: #99C794 !important;
 }
 
-/* line 518, Data/Resources/scss/_theme.scss */
+/* line 526, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='12'],
 .inline_nickname[colornumber$='12'] {
   color: #5FB3B3 !important;
 }
 
-/* line 523, Data/Resources/scss/_theme.scss */
+/* line 531, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='13'],
 .inline_nickname[colornumber$='13'] {
   color: #6699CC !important;
 }
 
-/* line 528, Data/Resources/scss/_theme.scss */
+/* line 536, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='14'],
 .inline_nickname[colornumber$='14'] {
   color: #C594C5 !important;
 }
 
-/* line 533, Data/Resources/scss/_theme.scss */
+/* line 541, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='15'],
 .inline_nickname[colornumber$='15'] {
   color: #AB7967 !important;
 }
 
-/* line 538, Data/Resources/scss/_theme.scss */
+/* line 546, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='16'],
 .inline_nickname[colornumber$='16'] {
   color: #bf616a !important;
 }
 
-/* line 543, Data/Resources/scss/_theme.scss */
+/* line 551, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='17'],
 .inline_nickname[colornumber$='17'] {
   color: #d08770 !important;
 }
 
-/* line 548, Data/Resources/scss/_theme.scss */
+/* line 556, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='18'],
 .inline_nickname[colornumber$='18'] {
   color: #ebcb8b !important;
 }
 
-/* line 553, Data/Resources/scss/_theme.scss */
+/* line 561, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='19'],
 .inline_nickname[colornumber$='19'] {
   color: #a3be8c !important;
 }
 
-/* line 558, Data/Resources/scss/_theme.scss */
+/* line 566, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='20'],
 .inline_nickname[colornumber$='20'] {
   color: #96b5b4 !important;
 }
 
-/* line 563, Data/Resources/scss/_theme.scss */
+/* line 571, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='21'],
 .inline_nickname[colornumber$='21'] {
   color: #8fa1b3 !important;
 }
 
-/* line 568, Data/Resources/scss/_theme.scss */
+/* line 576, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='22'],
 .inline_nickname[colornumber$='22'] {
   color: #b48ead !important;
 }
 
-/* line 573, Data/Resources/scss/_theme.scss */
+/* line 581, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='23'],
 .inline_nickname[colornumber$='23'] {
   color: #ab7967 !important;
 }
 
-/* line 578, Data/Resources/scss/_theme.scss */
+/* line 586, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='24'],
 .inline_nickname[colornumber$='24'] {
   color: #fb9fb1 !important;
 }
 
-/* line 583, Data/Resources/scss/_theme.scss */
+/* line 591, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='25'],
 .inline_nickname[colornumber$='25'] {
   color: #eda987 !important;
 }
 
-/* line 588, Data/Resources/scss/_theme.scss */
+/* line 596, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='26'],
 .inline_nickname[colornumber$='26'] {
   color: #ddb26f !important;
 }
 
-/* line 593, Data/Resources/scss/_theme.scss */
+/* line 601, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='27'],
 .inline_nickname[colornumber$='27'],
 .sender[nickname$="Serv"] {
   color: #acc267 !important;
 }
 
-/* line 599, Data/Resources/scss/_theme.scss */
+/* line 607, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='28'],
 .inline_nickname[colornumber$='28'] {
   color: #12cfc0 !important;
 }
 
-/* line 604, Data/Resources/scss/_theme.scss */
+/* line 612, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='29'],
 .inline_nickname[colornumber$='29'] {
   color: #6fc2ef !important;
 }
 
-/* line 609, Data/Resources/scss/_theme.scss */
+/* line 617, Data/Resources/scss/_theme.scss */
 .sender[mtype*=normal][colornumber$='30'],
 .inline_nickname[colornumber$='30'] {
   color: #e1a3ee !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='0'] {
   color: #EAEAEA !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='0'] {
   background-color: #EAEAEA !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='1'] {
   color: #515151 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='1'] {
   background-color: #515151 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='2'] {
   color: #356997 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='2'] {
   background-color: #356997 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='3'] {
   color: #4f9261 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='3'] {
   background-color: #4f9261 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='4'] {
   color: #9e3844 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='4'] {
   background-color: #9e3844 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='5'] {
   color: #784e42 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='5'] {
   background-color: #784e42 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='6'] {
   color: #7e5495 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='6'] {
   background-color: #7e5495 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='7'] {
   color: #F99157 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='7'] {
   background-color: #F99157 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='8'] {
   color: #FAC863 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='8'] {
   background-color: #FAC863 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='9'] {
   color: #99C794 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='9'] {
   background-color: #99C794 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='10'] {
   color: #328288 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='10'] {
   background-color: #328288 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='11'] {
   color: #5FB3B3 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='11'] {
   background-color: #5FB3B3 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='12'] {
   color: #6699CC !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='12'] {
   background-color: #6699CC !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='13'] {
   color: #C594C5 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='13'] {
   background-color: #C594C5 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='14'] {
   color: #1d2d36 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='14'] {
   background-color: #1d2d36 !important;
 }
 
-/* line 635, Data/Resources/scss/_theme.scss */
+/* line 643, Data/Resources/scss/_theme.scss */
 .effect[color-number='15'] {
   color: #1c2c35 !important;
 }
 
-/* line 639, Data/Resources/scss/_theme.scss */
+/* line 647, Data/Resources/scss/_theme.scss */
 .effect[bgcolor-number='15'] {
   background-color: #1c2c35 !important;
 }

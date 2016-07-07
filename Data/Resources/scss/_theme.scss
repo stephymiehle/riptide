@@ -325,7 +325,6 @@ div.event span.message, div[ltype=notice] span.message {
 
 .line[ltype=privmsg][highlight=true],
 .line[ltype=action][highlight=true] {
-  background-color: rgba(#000, 0.2);
   background: linear-gradient(90deg,
               rgba(map-get($oceanic-next, red), 0.15),
               rgba(map-get($oceanic-next, orange), 0.15),
@@ -334,6 +333,15 @@ div.event span.message, div[ltype=notice] span.message {
               rgba(map-get($oceanic-next, teal), 0.15),
               rgba(map-get($oceanic-next, blue), 0.15),
               rgba(map-get($oceanic-next, purple), 0.15));
+}
+
+.line[ltype=privmsg][highlight=true],
+.line[ltype=action][highlight=true],
+.line.selectedUser,
+.line[ltype=privmsg][mtype*=myself] {
+  .sender, .inline_nickname {
+    text-shadow: 0.1em 0.1em 0.1em rgba(#000, 0.75);
+  }
 }
 
 .sender[mtype*=myself] {
@@ -492,7 +500,7 @@ div[mtype*=myself] {
 
 .sender[mtype*=normal][colornumber$='7'],
 .inline_nickname[colornumber$='7'] {
-  color: map-get($oceanic-next-dark, maroon) !important;
+  color: map-get($chalk, maroon) !important;
 }
 
 .sender[mtype*=normal][colornumber$='8'],
