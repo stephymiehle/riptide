@@ -352,21 +352,21 @@ div[mtype*=myself] {
   background-color: rgba(map-get($oceanic-next, teal), 0.1);
 }
 
-.line[ltype=join],
-.line[ltype=part],
-.line[ltype=quit],
-.line[ltype=mode],
-.line[ltype=nick],
-.line[ltype=topic],
-.line[ltype=website] {
-  .message:before {
-    display: inline-block;
-    font-weight: normal;
-    font-style: normal;
-    opacity: 0.6;
-    margin-left: -1.5em;
-    padding-right: 0.4em;
-  }
+.line[ltype=join]    .message:before,
+.line[ltype=part]    .message:before,
+.line[ltype=quit]    .message:before,
+.line[ltype=mode]    .message:before,
+.line[ltype=debug]   .message:before,
+.line[ltype=nick]    .message:before,
+.line[ltype=topic]   .message:before,
+.line[ltype=website] .message:before,
+.line[ltype=action]  .sender:before {
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 0.6;
+  margin-left: -1.5em;
+  padding-right: 0.4em;
 }
 
 .line[ltype=join] {
@@ -398,6 +398,13 @@ div[mtype*=myself] {
   }
 }
 
+.line[ltype=debug] {
+  .message:before {
+    @include icon(flash);
+    color: map-get($oceanic-next, red);
+  }
+}
+
 .line[ltype=nick] {
   .message:before {
     @include icon(user);
@@ -410,6 +417,11 @@ div[mtype*=myself] {
     @include icon(globe);
     color: map-get($oceanic-next, purple);
   }
+}
+
+.line[ltype=action] .sender:before {
+  @include icon(star);
+  color: map-get($oceanic-next, teal);
 }
 
 .time {
