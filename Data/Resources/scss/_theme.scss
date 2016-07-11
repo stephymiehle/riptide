@@ -281,7 +281,16 @@ div[ltype=notice] span.SenderContainer {
   text-align: right;
   font-weight: bold;
   font-style: normal;
-  text-overflow: ellipsis;
+  position: relative;
+
+  .sender {
+    max-width: 125px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: absolute;
+    right: 10px;
+    overflow: hidden;
+  }
 }
 
 div[ltype=action] span.senderContainer {
