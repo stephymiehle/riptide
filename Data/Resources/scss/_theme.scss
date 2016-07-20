@@ -145,10 +145,10 @@ a {
   @include transition;
   text-decoration: none;
   border-bottom: 1px solid; // Inherits the text color
-}
 
-a:hover {
-  color: lighten(map-get($oceanic-next, blue), 20%);
+  &:hover {
+    color: lighten(map-get($oceanic-next, blue), 20%);
+  }
 }
 
 // ------
@@ -170,41 +170,41 @@ body img {
   overflow: auto;
   width: auto;
   height: auto;
-}
 
-.inlineImageCell > a {
-  display: inline-block;
-  border: none;
-}
+  & > a {
+    display: inline-block;
+    border: none;
+  }
 
-.inlineImageCell .image {
-  display: inline-block;
-  float: left;
-  margin: 15px 0;
-  min-width: 100px;
-}
+  .image {
+    display: inline-block;
+    float: left;
+    margin: 15px 0;
+    min-width: 100px;
+  }
 
-.inlineImageCell .closeButton {
-  background: map-get($oceanic-next-dark, green);
-  color: map-get($oceanic-next, green);
-  border-radius: 50%;
-  position: absolute;
-  box-sizing: border-box;
-  box-shadow: 2px 2px 8px rgba(#000, 0.5);
-  font-size: 12px !important;
-  font-family: "Helvetica Neue" !important;
-  font-weight: 700 !important;
-  text-align: center;
-  line-height: 18px;
-  top: 5px;
-  right: -7px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  @include transition;
+  .closeButton {
+    background: map-get($oceanic-next-dark, green);
+    color: map-get($oceanic-next, green);
+    border-radius: 50%;
+    position: absolute;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 8px rgba(#000, 0.5);
+    font-size: 12px !important;
+    font-family: "Helvetica Neue" !important;
+    font-weight: 700 !important;
+    text-align: center;
+    line-height: 18px;
+    top: 5px;
+    right: -7px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    @include transition;
 
-  &:hover {
-  	background: darken(map-get($oceanic-next-dark, green), 15%);
+    &:hover {
+    	background: darken(map-get($oceanic-next-dark, green), 15%);
+    }
   }
 }
 
@@ -273,52 +273,58 @@ div[id=mark] {
   min-height: ($font-size * $line-height);
 }
 
-div[ltype=privmsg] span.senderContainer,
-div[ltype=notice] span.SenderContainer {
-  width: 125px;
-  padding: 0 10px;
-  display: table-cell;
-  text-align: right;
-  font-weight: bold;
-  font-style: normal;
-  position: relative;
+div[ltype=privmsg], div[ltype=notice] {
+  .SenderContainer {
+    width: 125px;
+    padding: 0 10px;
+    display: table-cell;
+    text-align: right;
+    font-weight: bold;
+    font-style: normal;
+    position: relative;
 
-  .sender {
-    max-width: 125px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    position: absolute;
-    right: 10px;
-    overflow: hidden;
+    .sender {
+      max-width: 125px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      position: absolute;
+      right: 10px;
+      overflow: hidden;
+    }
+  }
+
+  .innerMessage {
+    display: table-cell;
   }
 }
 
-div[ltype=action] span.senderContainer {
-  padding: 0 3px 0 145px;
-  display: table-cell;
-  font-weight: bold;
-  font-style: italic;
+div[ltype=action] {
+  p {
+    padding-left: 145px;
+  }
+
+  .message {
+    display: table-cell; // Prevents text from wrapping underneath the timestamp
+    font-style: italic;
+  }
+
+  .senderContainer {
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+
+    &:after {
+      content: ' ';
+    }
+  }
 }
 
-div[ltype=privmsg] span.innerMessage,
-div[ltype=notice] span.innerMessage {
-  display: table-cell;
-}
-
-div[ltype=action] span.innerMessage {
-  font-style: italic;
-}
-
-div[ltype=action] span.innerMessage {
-  display: table-cell;
-}
-
-div.event span.message {
+.event .message {
   display: table-cell;
   padding-left: 145px;
 }
 
-div.event span.message, div[ltype=notice] span.message {
+.event .message, div[ltype=notice] .message {
   font-size: 90%;
   color: rgba(map-get($oceanic-next, teal), 0.3);
   font-style: italic;
@@ -455,23 +461,13 @@ div[mtype*=myself] {
 }
 
 .line[ltype=privmsg]:not(.selectedUser),
-.line[ltype=action]:not(.selectedUser) {
-  transition-property: background-color;
-  transition-duration: 0.5s, 0.5s, 0.5s;
-}
-
-.line[ltype=privmsg] .time:not(.selectedUser),
-.line[ltype=action] .time:not(.selectedUser) {
-  transition: color 0.5s;
-}
-
-.line.selectedUser[highlight=false] .time {
-  transition: color 0.5s ease-in;
-}
-
+.line[ltype=action]:not(.selectedUser),
 .line.selectedUser[highlight=false] {
   transition-property: background-color;
   transition-duration: 0.5s, 0.5s, 0.5s;
+}
+
+.line.selectedUser[highlight=false] {
   z-index: 190;
   position: relative;
   background-color: rgba(map-get($oceanic-next, red), 0.2);
