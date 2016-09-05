@@ -181,6 +181,10 @@ body img {
     float: left;
     margin: 15px 0;
     min-width: 100px;
+    max-width: 100% !important; // Overrides inline styles
+    width: auto !important;
+    height: auto !important;
+    max-height: 75vh;
   }
 
   .closeButton {
