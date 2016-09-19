@@ -212,6 +212,26 @@ body img {
   }
 }
 
+// ---------------------
+// Post-Historic Message
+// ---------------------
+
+// This will appear after historic messages and before the first sibling
+
+#historic_messages ~ div:nth-of-type(2):before {
+  content: 'New Messages';
+  display: block;
+  width: 100%;
+  padding: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: darken($background, 5%);
+  color: rgba(#fff, 0.5);
+  font-weight: bold;
+  box-shadow: inset -4px 0 6px 2px rgba(#000, 0.25);
+}
+
 // -------------
 // Remember Line
 // -------------
