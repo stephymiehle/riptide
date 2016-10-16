@@ -216,13 +216,14 @@ body img {
 // Post-Historic Message
 // ---------------------
 
-// This will appear after historic messages and before the first sibling
+// Super-specific selector to avoid accidentally styling the marker line
 
-#historic_messages ~ div:nth-of-type(2):before {
+#historic_messages ~ div[ltype="privmsg"]:first-of-type:before {
   content: 'New Messages';
   display: block;
   width: 100%;
-  padding: 3px;
+  padding: 6px;
+  margin: 0 0 6px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -230,6 +231,10 @@ body img {
   color: rgba(#fff, 0.5);
   font-weight: bold;
   box-shadow: inset -4px 0 6px 2px rgba(#000, 0.25);
+}
+
+#historic_messages > div:last-of-type {
+  padding-bottom: 6px;
 }
 
 // -------------
